@@ -5,11 +5,11 @@
 /.env.local.php
 /.env.*.local
 /.env.test
+/.env.prod
 /.phpunit.result.cache
 /phpunit.xml
 /phpunit.xml.local
 /composer.phar
-/composer.lock
 
 # Node / Yarn / Frontend
 /node_modules/
@@ -42,7 +42,7 @@ yarn-error.log*
 Thumbs.db
 
 # Docker
-/docker-compose.override.yml
+/compose.override.yml
 /.docker/
 
 # Cache & coverage
@@ -52,6 +52,10 @@ coverage/
 
 # Symfony Encore
 /public/build/
+
+# Uploaded media (keep .gitkeep files)
+/public/media/*
+!/public/media/**/.gitkeep
 
 # Misc
 /.env.backup
