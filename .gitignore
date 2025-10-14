@@ -1,0 +1,57 @@
+# Symfony / PHP
+/vendor/
+/var/
+/.env.local
+/.env.local.php
+/.env.*.local
+/.env.test
+/.phpunit.result.cache
+/phpunit.xml
+/phpunit.xml.local
+/composer.phar
+/composer.lock
+
+# Node / Yarn / Frontend
+/node_modules/
+/dist/
+/build/
+/.pnp*
+.pnp.js
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+/yarn-error.log
+/npm-debug.log*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs & Editors
+/.idea/
+/.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+/docker-compose.override.yml
+/.docker/
+
+# Cache & coverage
+coverage/
+/.cache/
+/.eslintcache
+
+# Symfony Encore
+/public/build/
+
+# Misc
+/.env.backup
