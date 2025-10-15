@@ -1,0 +1,20 @@
+{% import '@SyliusAdmin/shared/helper/translations.html.twig' as translations %}
+
+{# Override: render ALL translation fields, including custom ones from form extensions.
+   Reason: the default vendor template uses translations.with_hook(), which renders only
+   predefined hooked fields and skips extra fields added by extensions. Using the
+   `default` macro iterates over all fields in each translation form and calls form_row(). #}
+
+{% set form = hookable_metadata.context.form %}
+{% set prefixes = hookable_metadata.prefixes %}
+
+<div class="card mb-3">
+    <div class="card-header">
+        <h2 class="card-title">
+            {{ 'sylius.ui.translations'|trans }}
+        </h2>
+    </div>
+    <div class="">
+        {{ translations.default(form.translations, null, { accordion_id: 'taxon-translations', accordion_flush: true }) }}
+    </div>
+</div>
