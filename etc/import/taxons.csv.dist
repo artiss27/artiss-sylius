@@ -1,0 +1,6 @@
+code,parent_code,name,slug,enabled,position,visible_in_menu,template,h1,short_description,seo_text_top,seo_text_bottom,meta_title,meta_description,breadcrumbs_title,badge,seo_data,merchandising,product_meta_title_template,product_meta_description_template,product_og_title_template,product_og_description_template
+root,,Обладнання,obladnannya,1,0,1,default,Обладнання,,,,,,Обладнання,,{"robots_index":"index","robots_follow":"follow"},{"default_sort":"new","allowed_sorts":["new","price_asc","price_desc"]},"{{ category_name }} — купить",,"{{ category_name }}",,
+kotly,root,Котли,kotly,1,10,1,default,Котли,,,,,,Котли,,,,,,,
+rad_iatory,root,Радіатори,radiatory,1,20,1,default,Радіатори,,,,,,Радіатори,,,,,,,
+novynky,root,Новинки,novynky,1,90,1,promo,Новинки,,,,,,Новинки,Новинки,,,,,,
+akciji,root,Акції,akciji,1,100,1,promo,Акції,,,,,,Акції,Розпродаж,,,,,,

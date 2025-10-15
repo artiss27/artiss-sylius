@@ -90,6 +90,9 @@ cache-clear: ## Clear Symfony cache
 cache-warmup: ## Warm up Symfony cache
 	@$(DC) run --rm php bin/console cache:warmup
 
+import-taxons: ## Import categories from CSV (usage: make import-taxons f=etc/import/taxons.csv L=en_US)
+	@$(DC) run --rm php bin/console app:import:taxons ${f:---} --locale=${L:-en_US}
+
 test: ## Run PHPUnit test suite
 	@$(DC) run --rm php ./vendor/bin/phpunit
 

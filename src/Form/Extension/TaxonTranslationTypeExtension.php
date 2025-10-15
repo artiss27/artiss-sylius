@@ -79,6 +79,26 @@ final class TaxonTranslationTypeExtension extends AbstractTypeExtension
                 'label' => 'OG description template',
                 'attr' => ['rows' => 4],
             ])
+            ->add('productMetaTitleTemplate', TextType::class, [
+                'required' => false,
+                'label' => 'Product meta title template',
+                'help' => 'Placeholders: {{ product_name }}, {{ brand }}, {{ category_name }}, {{ price }}, {{ sku }}, {{ page }}',
+            ])
+            ->add('productMetaDescriptionTemplate', TextareaType::class, [
+                'required' => false,
+                'label' => 'Product meta description template',
+                'attr' => ['rows' => 4],
+                'help' => 'Placeholders: {{ product_name }}, {{ brand }}, {{ category_name }}, {{ price }}, {{ sku }}, {{ page }}',
+            ])
+            ->add('productOgTitleTemplate', TextType::class, [
+                'required' => false,
+                'label' => 'Product OG title template',
+            ])
+            ->add('productOgDescriptionTemplate', TextareaType::class, [
+                'required' => false,
+                'label' => 'Product OG description template',
+                'attr' => ['rows' => 4],
+            ])
         ;
     }
 }

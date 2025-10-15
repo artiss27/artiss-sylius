@@ -47,6 +47,19 @@ class TaxonTranslation extends BaseTaxonTranslation
     #[ORM\Column(name: 'og_description_template', type: 'text', nullable: true)]
     private ?string $ogDescriptionTemplate = null;
 
+    // Product-level SEO templates (localized)
+    #[ORM\Column(name: 'product_meta_title_template', type: 'string', length: 255, nullable: true)]
+    private ?string $productMetaTitleTemplate = null;
+
+    #[ORM\Column(name: 'product_meta_description_template', type: 'text', nullable: true)]
+    private ?string $productMetaDescriptionTemplate = null;
+
+    #[ORM\Column(name: 'product_og_title_template', type: 'string', length: 255, nullable: true)]
+    private ?string $productOgTitleTemplate = null;
+
+    #[ORM\Column(name: 'product_og_description_template', type: 'text', nullable: true)]
+    private ?string $productOgDescriptionTemplate = null;
+
     public function getH1(): ?string { return $this->h1; }
     public function setH1(?string $h1): void { $this->h1 = $h1; }
 
@@ -82,4 +95,16 @@ class TaxonTranslation extends BaseTaxonTranslation
 
     public function getOgDescriptionTemplate(): ?string { return $this->ogDescriptionTemplate; }
     public function setOgDescriptionTemplate(?string $ogDescriptionTemplate): void { $this->ogDescriptionTemplate = $ogDescriptionTemplate; }
+
+    public function getProductMetaTitleTemplate(): ?string { return $this->productMetaTitleTemplate; }
+    public function setProductMetaTitleTemplate(?string $v): void { $this->productMetaTitleTemplate = $v; }
+
+    public function getProductMetaDescriptionTemplate(): ?string { return $this->productMetaDescriptionTemplate; }
+    public function setProductMetaDescriptionTemplate(?string $v): void { $this->productMetaDescriptionTemplate = $v; }
+
+    public function getProductOgTitleTemplate(): ?string { return $this->productOgTitleTemplate; }
+    public function setProductOgTitleTemplate(?string $v): void { $this->productOgTitleTemplate = $v; }
+
+    public function getProductOgDescriptionTemplate(): ?string { return $this->productOgDescriptionTemplate; }
+    public function setProductOgDescriptionTemplate(?string $v): void { $this->productOgDescriptionTemplate = $v; }
 }

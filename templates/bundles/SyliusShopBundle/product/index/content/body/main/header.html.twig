@@ -1,0 +1,31 @@
+{# Category header with optional responsive banner and SEO top text #}
+{% set tpl = taxon.template ?? 'default' %}
+<div class="mb-4 {{ tpl == 'promo' ? 'category-header--promo' : (tpl == 'landing_wide' ? 'category-header--landing' : '') }}">
+    {# Responsive banner: prefers mobile if provided, falls back to desktop #}
+    {% set images = taxon.images|default([]) %}
+    {% set desktop = images|filter(i => i.type == 'banner_desktop')|first %}
+    {% set mobile = images|filter(i => i.type == 'banner_mobile')|first %}
+    {% if desktop %}
+        <div class="category-banner mb-3">
+            <picture>
+                {% if mobile %}
+                    <source media="(max-width: 767px)" srcset="{{ asset('media/image/' ~ mobile.path) }}" />
+                {% endif %}
+                <img src="{{ asset('media/image/' ~ desktop.path) }}"
+                     alt="{{ (taxon.translation.h1 ?? taxon.name)|e }}"
+                     class="img-fluid w-100"
+                     loading="eager"
+                     fetchpriority="high"
+                />
+            </picture>
+        </div>
+    {% endif %}
+
+    {# Standard header (name, breadcrumbs header parts, etc.) #}
+    {% hook 'header'  with { taxon } %}
+
+    {# Optional top SEO text #}
+    {% if taxon.translation.seoTextTop is not empty %}
+        <div class="mt-3 category-seo-top">{{ taxon.translation.seoTextTop|raw }}</div>
+    {% endif %}
+</div>

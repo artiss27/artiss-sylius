@@ -1,0 +1,4 @@
+{# Optional bottom SEO text block; rendered after products list, if present #}
+{% if taxon is defined and taxon.translation.seoTextBottom is not empty %}
+    <div class="mt-4 category-seo-bottom">{{ taxon.translation.seoTextBottom|raw }}</div>
+{% endif %}

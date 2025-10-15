@@ -1,0 +1,4 @@
+{% set taxon = hookable_metadata.context.taxon %}
+{% if taxon.translation.shortDescription is not empty %}
+    <div class="text-muted mb-3">{{ taxon.translation.shortDescription|raw }}</div>
+{% endif %}
